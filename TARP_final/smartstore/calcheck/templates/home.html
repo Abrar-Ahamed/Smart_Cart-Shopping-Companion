@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Signika&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h2>
+  Your Cart
+</h2>
+<h2>Please upload csv file</h2>
+<div class="middle">
+<!--    <form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="file" name="document" id="document" required="required">-->
+<!--        <button id="submit" class="btn">Upload csv</button>-->
+<!--    </form>-->
+    {% block messages %}
+        {% if messages %}
+            <div class="bio">
+                {% for messages in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endblock %}
+</div>
+`
+
+</body>
+</html>
