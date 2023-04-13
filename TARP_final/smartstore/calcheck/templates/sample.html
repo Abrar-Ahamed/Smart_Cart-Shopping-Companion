@@ -1,0 +1,42 @@
+<!--   var arrayString = {{ dataset }};-->
+<!--   var cholesterolValues = JSON.parse(arrayString);-->
+
+<!--// Define the ranges and colors for the bars-->
+<!--const ranges = ['Less than 200', '200-239', '240-279', '280 and above'];-->
+<!--const colors = ['rgb(147,220,127)', 'rgb(158,202,225)', 'rgb(49,130,189)', 'rgb(249,88,75)'];-->
+
+<!--// Count the number of cholesterol values in each range-->
+<!--const countByRange = ranges.map(range => {-->
+<!--  let count = 0;-->
+<!--  cholesterolValues.forEach(value => {-->
+<!--    if (range === 'Less than 200' && value < 200) {-->
+<!--      count++;-->
+<!--    } else if (range === '200-239' && value >= 200 && value < 240) {-->
+<!--      count++;-->
+<!--    } else if (range === '240-279' && value >= 240 && value < 280) {-->
+<!--      count++;-->
+<!--    } else if (range === '280 and above' && value >= 280) {-->
+<!--      count++;-->
+<!--    }-->
+<!--  });-->
+<!--  return count;-->
+<!--});-->
+
+<!--// Define the data and layout for the bar chart-->
+<!--const data = [{-->
+<!--  x: ranges,-->
+<!--  y: countByRange,-->
+<!--  type: 'bar',-->
+<!--  marker: {-->
+<!--    color: colors-->
+<!--  }-->
+<!--}];-->
+
+<!--const layout = {-->
+<!--  title: 'Cholesterol Levels by Range',-->
+<!--  xaxis: { title: 'Range' },-->
+<!--  yaxis: { title: 'Count' }-->
+<!--};-->
+
+<!--// Create the bar chart-->
+<!--Plotly.newPlot('barchart', data, layout);-->

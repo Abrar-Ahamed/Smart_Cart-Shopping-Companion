@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Signika&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dashboard result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body bgcolor="#f1befa">
+{% block messages %}
+        {% if messages %}
+            <div class="bio">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endblock %}
+<div class="middle">
+
+  <canvas id="chartthree" width="200px" height="200px"></canvas>
+
+</div>
+
+
+
+<script>
+
+
+  const ctxdgh = document.getElementById('chartthree');
+  new Chart(ctxdgh, {
+    type: 'bar',
+    data: {
+      labels: {{labels|safe}},
+      datasets: [{
+        label: 'Cart Nutrient Content in (mg)',
+        data: {{dataset|safe}},
+        backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(232, 121, 93)',
+
+    ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+</script>
+
+</div>
+<div class="contact-text">
+        <a class="btn" href="cartotal/cartsum">Next Viz</a>
+</div>
+<hr>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Signika&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dashboard result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body bgcolor="#f1befa">
+{% block messages %}
+        {% if messages %}
+            <div class="bio">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endblock %}
+<div class="middle">
+    <h2>Cart Profile</h2>
+    <hr>
+    <h2 align="center"><b>Cholesterol Profile</b></h2>
+    <br>
+    <p class="bio">
+        {{ cart_cholest_prof }}
+    </p>
+    <br>
+    <h2 align="center"><b>Fat Profile</b></h2>
+    <br>
+    <p class="bio">
+        {{ cart_fats_prof }}
+    </p>
+    <br>
+    <h2 align="center"><b>CPF Profile</b></h2>
+    <br>
+    <p class="bio">
+    {{ cart_cpf_prof }}
+    </p>
+    <br>
+    <p class="bio">
+      <br>Get ready to modify your cart and Enjoy your shopping experience with CalCart!
+    </p>
+
+</div>
+
+<div class="middle">
+<div class="contact-me">
+        <a class="btn" onclick="history.go(-6)">Back to Cart</a>
+</div>
+</div>
+
+</body>
+</html>
